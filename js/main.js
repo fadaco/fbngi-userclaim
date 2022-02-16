@@ -6,7 +6,8 @@ import * as constants from './constants.js';
 //const socket = io('https://lit-bastion-91718.herokuapp.com');
 
 export const startApp = () => {
-const socket = io("http://localhost:4000");
+//const socket = io("http://localhost:4000");
+const socket = io("https://fast-forest-82655.herokuapp.com")
 
 wss.registerSocketEvents(socket);
 webRTCHandler.getLocalPreview();  

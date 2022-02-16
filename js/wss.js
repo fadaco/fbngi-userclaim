@@ -7,10 +7,23 @@ let socketIO = null;
 
     export const registerSocketEvents = (socket) => {
         socketIO = socket;
-        socket.on('connect', () => {
-            store.setSocketId(socket.id)
-            ui.updatePersonalCode(socket.id)
+        socket.emit('addUser', localStorage.getItem('staffid'))
+        socket.on('getUser', (user) => {
+            const users = user.filter(us => us.id === localStorage.getItem('staffid'));
+            if(users.length > 0) {
+            store.setOnlineUsers(user);
+            store.setSocketId(users[0].socketId)
+            ui.updatePersonalCode(users[0].socketId)
+            const remoteuser = user.filter(us => us.id !== localStorage.getItem('staffid'))
+            console.log(remoteuser);
+            // store.re
+            document.querySelector('#remote_code').value = remoteuser[0].socketId;
+            }
         });
+        // socket.on('connect', () => {
+        //     store.setSocketId(socket.id)
+        //     ui.updatePersonalCode(socket.id)
+        // });
 
         socket.on('pre-offer', (data) => {
             console.log('coming back')
