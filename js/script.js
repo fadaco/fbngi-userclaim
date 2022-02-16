@@ -43,7 +43,7 @@ body: JSON.stringify({
     document.querySelector('.sumInsured').innerHTML = 'N' + data.data.sum_insured;
     document.querySelector('.expiryDate').innerHTML = data.data.expiry_date;
     document.querySelector('.fom').innerHTML = data.data.frequency_of_payment;
-    document.querySelector('.main-subtitle').innerHTML = location.search.substring(location.search.indexOf('CLM')).replaceAll('%20', ' ');
+    document.querySelector('.main-subtitle').innerHTML = claimno;
   }
 })
 .catch(err => {
