@@ -16,8 +16,9 @@ let socketIO = null;
             ui.updatePersonalCode(users[0].socketId)
             const remoteuser = user.filter(us => us.id !== localStorage.getItem('staffid'))
             console.log(remoteuser);
-            // store.re
+            if(remoteuser.length > 0) {
             document.querySelector('#remote_code').value = remoteuser[0].socketId;
+            }
             }
         });
         // socket.on('connect', () => {
