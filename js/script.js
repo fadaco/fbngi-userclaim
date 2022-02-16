@@ -11,7 +11,7 @@ let fullname;
 var formData = new FormData();
 formData.append('data', location.search.substring(location.search.indexOf('=') + 1, location.search.indexOf('&')).replaceAll('%20', ' '));  
 console.log(location.search.substring(location.search.indexOf('=') + 1))
-const claimno = location.search.substring(location.search.indexOf('=') + 1).replaceAll('%20', ' ');
+const claimno = location.search.substring(location.search.indexOf('=') + 1).replaceAll('%2F', ' ');
 console.log(claimno);
 
 fetch(`https://fast-forest-82655.herokuapp.com/api/transaction`, {
