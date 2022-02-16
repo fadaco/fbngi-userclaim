@@ -78,8 +78,25 @@ document.querySelector('#submitId').addEventListener('click', function(){
         document.querySelector('#img-container').classList.remove('hide')
         document.querySelector('.acceptContainer').classList.add('hide')
 
-        store.setSocketConnection(true);
-        main.startApp();
+        fetch('https://fast-forest-82655.herokuapp.com/api/accept_liability', {
+          method: 'POST',
+          headers: {
+            'Content-Type':'application/json',
+            'Accept':'application/json'
+        },
+        body: JSON.stringify({
+          claim_no: claimno,
+          accept_liability: document.querySelector('#agreementCheck').checked,
+          description_of_loss: document.querySelector('.descriptionLoss').value
+        })
+        }).then((res) => res.json())
+        .then((resp) => {
+          if(resp.status) {
+             store.setSocketConnection(true);
+              main.startApp();
+          }
+        })
+        .catch((err) => console.log(err))
 
     } else {
       M.toast({html: `${document.querySelector('.full_name').innerHTML }, you have to accept the agreement to proceed`})
