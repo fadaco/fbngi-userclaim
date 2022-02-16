@@ -3,7 +3,8 @@ let state = {
     socketId: null,
     localStream: null,
     remoteStream: null,
-    socketConnection: false
+    socketConnection: false,
+    onlineUsers: []
 }
 
 export const setSocketId = (socketId) => {
@@ -17,6 +18,13 @@ export const setLocalStream = (stream) => {
     state = {
         ...state,
         localStream: stream
+    }
+}
+
+export const setOnlineUsers = (users) => {
+    state = {
+        ...state,
+        onlineUsers: users
     }
 }
 
