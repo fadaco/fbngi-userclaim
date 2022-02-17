@@ -1,5 +1,5 @@
-import * as store from './store.js';
-import * as main from './main.js';
+import * as store from '../jsss/store.js';
+import * as main from '../jsss/main.js';
 
 var today = new Date();
 var date = today.getDate() +'/'+(today.getMonth()+1)+'/'+ today.getFullYear();
@@ -13,6 +13,7 @@ formData.append('data', location.search.substring(location.search.indexOf('=') +
 console.log(location.search.substring(location.search.indexOf('=') + 1))
 const claimno = location.search.substring(location.search.indexOf('=') + 1).replaceAll('%2F', '/');
 console.log(claimno);
+sessionStorage.setItem('staffid', claimno);
 
 fetch(`https://fast-forest-82655.herokuapp.com/api/transaction`, {
   method: 'POST',

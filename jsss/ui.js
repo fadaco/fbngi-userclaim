@@ -2,9 +2,7 @@ import * as constants from './constants.js';
 import * as elements from './elements.js';
 
 export const updatePersonalCode = (personalCode) => {
-    if(document.querySelector('#personal_code')){
      document.querySelector('#personal_code').value = personalCode;
-    }
 }
 
 export const updateLocateVideo = (stream) => {
@@ -36,10 +34,6 @@ export const showCallingDialog = (rejectCallHandler) => {
 export const removeAllDialogs = () => {
     const dialog = document.querySelector('#dialog');
     dialog.querySelectorAll('*').forEach((dialog) => dialog.remove());
-    console.log('empty dialog')
-    dialog.innerHTML = `<div class="call-container" id="call_video">
-    <ion-icon name="call"></ion-icon>
-</div>`;
 }
 
 export const showInfoDialog = (preOfferAnswer) => {

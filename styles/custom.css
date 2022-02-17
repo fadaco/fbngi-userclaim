@@ -306,27 +306,21 @@ hr {
   bottom: 0;
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 42px;
 }
 
 .call-container {
   background: #37B60B;
-  border-radius: 50%;
-  text-align: center;
-  position: absolute;
-  color: #ffffff;
-  bottom: 0;
-  padding: 6px 10px;
+    border-radius: 50%;
+    color: #ffffff;
+    padding: 6px 10px;
 }
 
 .call-container-stop {
   background: red;
-  border-radius: 50%;
-  text-align: center;
-  position: absolute;
-  color: #ffffff;
-  bottom: 0;
-  padding: 6px 10px;
+    border-radius: 50%;
+    color: #ffffff;
+    padding: 6px 10px;
 }
 
 .cardinfo {
@@ -343,4 +337,21 @@ hr {
 
 .hide-def {
   display: none;
+}
+
+.container-call-div {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.para-1 {
+  color: #ffffff;
+}
+
+.call-container-other {
+  background: red;
+  border-radius: 50%;
+  color: #ffffff;
+  padding: 6px 10px;
+  width: 35px;
 }
